@@ -9,6 +9,7 @@ class jenkins(
                             $manage_docker_service = true,
                             $service_ensure        = 'running',
                             $service_enable        = true,
+                            $srcdir                = '/usr/local/src',
                           ) inherits jenkins::params{
 
   class { '::jenkins::install': } ->

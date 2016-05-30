@@ -8,6 +8,8 @@ class jenkins::params {
       {
         /^[5-7].*$/:
         {
+          $url_install='http://pkg.jenkins-ci.org/redhat-stable/'
+          $package_provider='rpm'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -22,6 +24,8 @@ class jenkins::params {
           {
             /^14.*$/:
             {
+              $url_install='http://pkg.jenkins-ci.org/debian-stable/'
+              $package_provider='dpkg'
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
