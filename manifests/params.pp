@@ -1,5 +1,7 @@
 class jenkins::params {
 
+  $service_name='jenkins'
+
   case $::osfamily
   {
     'redhat':

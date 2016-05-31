@@ -14,7 +14,12 @@ class jenkins::service inherits jenkins {
   {
     if($jenkins::manage_service)
     {
-      #service or exec here
+      service { $jenkins::params::service_name:
+        ensure     => $jenkins::service_ensure,
+        enable     => $jenkins::service_enable,
+        hasstatus  => true,
+        hasrestart => true,
+      }
     }
   }
 }
